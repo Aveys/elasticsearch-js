@@ -93,7 +93,8 @@ HttpConnector.prototype.makeAgentConfig = function (config) {
     keepAliveMsecs: config.keepAliveInterval,
     maxSockets: config.maxSockets,
     maxFreeSockets: config.keepAliveMaxFreeSockets,
-    freeSocketKeepAliveTimeout: config.keepAliveFreeSocketTimeout
+    ffreeSocketKeepAliveTimeout: config.keepAliveFreeSocketTimeout,
+    keepAliveTimeout: config.keepAliveFreeSocketTimeout // support agentkeepalive 2.x (https://github.com/elastic/elasticsearch-js/pull/600/commits/8f4488d4e4f481c457d2a517c8280fb69f4bde4a)
   };
 
   if (this.useSsl) {
